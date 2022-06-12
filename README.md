@@ -17,6 +17,8 @@ Detailed: https://arxiv.org/pdf/2106.08087v6.pdf
 
 ## Contributor
 
-Ziyuan Li: Finish `metrics.py`; 
-Chuhang Ma: Finish `ee_data.py` and `model.py`; Add 
+Ziyuan Li: Finish `metrics.py`; Add Layer Learning rate decay (todo)
+
+Chuhang Ma: Finish `ee_data.py` and `model.py`; Add biLSTM & Loss Average.
+
 Juntu Zhao: Finish `ee_data.py` and `model.py`; Write the course report.
