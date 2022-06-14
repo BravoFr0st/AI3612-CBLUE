@@ -21,8 +21,8 @@ For storage reasons, please download from https://huggingface.co/bert-base-chine
 
 ## Contributor
 
-Ziyuan Li: Finish `metrics.py`; Add Layer Learning rate decay (todo)
+Ziyuan Li: Finish `metrics.py`; Add Layer Learning rate decay in `run_cmeee.py` and `utils.py`.
 
-Chuhang Ma: Finish `ee_data.py` and `model.py`; Add biLSTM & Loss Average.
+Chuhang Ma: Finish `ee_data.py` and `model.py`; Add biLSTM Layer & Loss Average in `model.py`.
 
 Juntu Zhao: Finish `ee_data.py` and `model.py`; Write the course report.
