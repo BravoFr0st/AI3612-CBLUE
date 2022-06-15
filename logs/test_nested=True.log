@@ -1,0 +1,11 @@
+/dssg/home/acct-stu/stu909/.conda/envs/medical/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+{'input_ids': tensor([[ 101, 2190, 1036, 4997,  100,  100,  100,  100,  100,  102],
+        [ 101, 4777, 4955, 6395, 2141, 8024, 5301, 5528, 1121,  102],
+        [ 101, 1728, 5445, 1036, 4997, 5511, 6956, 4567, 1359,  102]]), 'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]), 'labels': tensor([[ 1,  1,  1,  1, 16, 17, 17, 17, 17,  1],
+        [ 1,  1,  1,  1,  1,  1,  1,  1,  1,  1],
+        [ 1,  1,  1,  1,  1, 16, 17,  1,  1,  1]]), 'labels2': tensor([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 2, 3, 3, 3, 1]]), 'no_decode': False}

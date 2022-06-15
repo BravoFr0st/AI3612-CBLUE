@@ -1,0 +1,370 @@
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Some weights of the model checkpoint at ../bert-base-chinese were not used when initializing BertForCRFHeadNestedNER: ['cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.predictions.bias', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertForCRFHeadNestedNER from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForCRFHeadNestedNER from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForCRFHeadNestedNER were not initialized from the model checkpoint at ../bert-base-chinese and are newly initialized: ['classifier1.birnn.bias_ih_l0', 'classifier2.birnn.weight_ih_l0', 'classifier2.hidden2tag.bias', 'classifier2.hidden2tag.weight', 'classifier2.crf.start_transitions', 'classifier1.birnn.weight_ih_l0', 'classifier1.birnn.weight_hh_l0_reverse', 'classifier1.crf.transitions', 'classifier2.birnn.weight_ih_l0_reverse', 'classifier2.birnn.weight_hh_l0', 'classifier1.birnn.bias_hh_l0_reverse', 'classifier2.crf.transitions', 'classifier1.hidden2tag.weight', 'classifier2.birnn.bias_ih_l0', 'classifier1.crf.start_transitions', 'classifier2.birnn.bias_hh_l0', 'classifier2.birnn.weight_hh_l0_reverse', 'classifier2.crf.end_transitions', 'classifier2.birnn.bias_hh_l0_reverse', 'classifier1.birnn.weight_ih_l0_reverse', 'classifier2.birnn.bias_ih_l0_reverse', 'classifier1.hidden2tag.bias', 'classifier1.crf.end_transitions', 'classifier1.birnn.bias_ih_l0_reverse', 'classifier1.birnn.weight_hh_l0', 'classifier1.birnn.bias_hh_l0']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running training *****
+  Num examples = 15000
+  Num Epochs = 20
+  Instantaneous batch size per device = 4
+  Total train batch size (w. parallel, distributed & accumulation) = 16
+  Gradient Accumulation steps = 4
+  Total optimization steps = 18740
+{'loss': 407.8529, 'learning_rate': 3.2017075773746e-08, 'epoch': 0.0}
+{'loss': 310.1396, 'learning_rate': 6.4034151547492e-06, 'epoch': 0.21}
+{'loss': 135.3825, 'learning_rate': 1.28068303094984e-05, 'epoch': 0.43}
+{'loss': 94.1211, 'learning_rate': 1.92102454642476e-05, 'epoch': 0.64}
+{'loss': 78.6151, 'learning_rate': 2.56136606189968e-05, 'epoch': 0.85}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torchcrf/__init__.py:249: UserWarning: where received a uint8 condition tensor. This behavior is deprecated and will be removed in a future version of PyTorch. Use a boolean condition instead. (Triggered internally at  /pytorch/aten/src/ATen/native/TensorCompare.cpp:255.)
+  score = torch.where(mask[i].unsqueeze(1), next_score, score)
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 71.3722, 'learning_rate': 2.999907306079514e-05, 'epoch': 1.07}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-1000
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-1000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-1000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-1000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-1000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-14000] due to args.save_total_limit
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-18000] due to args.save_total_limit
+{'eval_loss': 271.7600402832031, 'eval_f1': 0.5348799928546936, 'eval_runtime': 37.0492, 'eval_samples_per_second': 134.956, 'eval_steps_per_second': 8.448, 'epoch': 1.07}
+{'loss': 60.9974, 'learning_rate': 2.9983848674539465e-05, 'epoch': 1.28}
+{'loss': 59.4533, 'learning_rate': 2.9949962569027466e-05, 'epoch': 1.49}
+{'loss': 55.9256, 'learning_rate': 2.9897456947901306e-05, 'epoch': 1.71}
+{'loss': 52.8079, 'learning_rate': 2.9826397204584404e-05, 'epoch': 1.92}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 48.5919, 'learning_rate': 2.9736871840836827e-05, 'epoch': 2.13}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-2000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-2000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-2000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-2000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-2000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-1000] due to args.save_total_limit
+{'eval_loss': 224.20895385742188, 'eval_f1': 0.6062185352925112, 'eval_runtime': 37.1544, 'eval_samples_per_second': 134.574, 'eval_steps_per_second': 8.424, 'epoch': 2.13}
+{'loss': 41.7112, 'learning_rate': 2.962899235653026e-05, 'epoch': 2.35}
+{'loss': 45.6625, 'learning_rate': 2.9502893110779867e-05, 'epoch': 2.56}
+{'loss': 43.6053, 'learning_rate': 2.9358731154605965e-05, 'epoch': 2.77}
+{'loss': 44.8561, 'learning_rate': 2.9196686035333938e-05, 'epoch': 2.99}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 36.5392, 'learning_rate': 2.901695957297602e-05, 'epoch': 3.2}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-3000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-3000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-3000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-3000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-3000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-2000] due to args.save_total_limit
+{'eval_loss': 239.84425354003906, 'eval_f1': 0.6148189732082593, 'eval_runtime': 37.1441, 'eval_samples_per_second': 134.611, 'eval_steps_per_second': 8.427, 'epoch': 3.2}
+{'loss': 33.1779, 'learning_rate': 2.8819775608873405e-05, 'epoch': 3.41}
+{'loss': 34.8742, 'learning_rate': 2.8605379726911757e-05, 'epoch': 3.63}
+{'loss': 33.667, 'learning_rate': 2.837403894765742e-05, 'epoch': 3.84}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 33.8211, 'learning_rate': 2.8126041395795084e-05, 'epoch': 4.06}
+{'loss': 26.9666, 'learning_rate': 2.7861695941281318e-05, 'epoch': 4.27}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-4000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-4000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-4000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-4000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-4000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-3000] due to args.save_total_limit
+{'eval_loss': 262.49505615234375, 'eval_f1': 0.6253498510891324, 'eval_runtime': 37.0032, 'eval_samples_per_second': 135.124, 'eval_steps_per_second': 8.459, 'epoch': 4.27}
+{'loss': 26.3831, 'learning_rate': 2.7581331814660674e-05, 'epoch': 4.48}
+{'loss': 28.3897, 'learning_rate': 2.7285298197023694e-05, 'epoch': 4.7}
+{'loss': 29.1527, 'learning_rate': 2.69739637851173e-05, 'epoch': 4.91}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 24.126, 'learning_rate': 2.6647716332149374e-05, 'epoch': 5.12}
+{'loss': 22.3716, 'learning_rate': 2.6306962164859286e-05, 'epoch': 5.34}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-5000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-5000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-5000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-5000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-5000/special_tokens_map.json
+{'eval_loss': 296.9805603027344, 'eval_f1': 0.6204152599457426, 'eval_runtime': 37.2883, 'eval_samples_per_second': 134.09, 'eval_steps_per_second': 8.394, 'epoch': 5.34}
+{'loss': 22.0309, 'learning_rate': 2.5952125677456013e-05, 'epoch': 5.55}
+{'loss': 22.4063, 'learning_rate': 2.5583648803053904e-05, 'epoch': 5.76}
+{'loss': 22.2146, 'learning_rate': 2.5201990463264616e-05, 'epoch': 5.98}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 18.2522, 'learning_rate': 2.4807625996630578e-05, 'epoch': 6.19}
+{'loss': 18.6434, 'learning_rate': 2.4401046566611924e-05, 'epoch': 6.4}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-6000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-6000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-6000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-6000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-6000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-5000] due to args.save_total_limit
+{'eval_loss': 318.81170654296875, 'eval_f1': 0.6180021789360164, 'eval_runtime': 37.1276, 'eval_samples_per_second': 134.671, 'eval_steps_per_second': 8.43, 'epoch': 6.4}
+{'loss': 19.1917, 'learning_rate': 2.398275854986416e-05, 'epoch': 6.62}
+{'loss': 17.6697, 'learning_rate': 2.355328290556848e-05, 'epoch': 6.83}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 17.2417, 'learning_rate': 2.311315452660025e-05, 'epoch': 7.04}
+{'loss': 14.5935, 'learning_rate': 2.266292157334358e-05, 'epoch': 7.26}
+{'loss': 14.5799, 'learning_rate': 2.2203144790981905e-05, 'epoch': 7.47}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-7000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-7000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-7000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-7000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-7000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-6000] due to args.save_total_limit
+{'eval_loss': 344.973388671875, 'eval_f1': 0.6173891725615764, 'eval_runtime': 37.2476, 'eval_samples_per_second': 134.237, 'eval_steps_per_second': 8.403, 'epoch': 7.47}
+{'loss': 15.012, 'learning_rate': 2.173439681111472e-05, 'epoch': 7.68}
+{'loss': 14.9729, 'learning_rate': 2.1257261438570296e-05, 'epoch': 7.9}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 12.7487, 'learning_rate': 2.0772332924302645e-05, 'epoch': 8.11}
+{'loss': 12.8073, 'learning_rate': 2.0280215225278316e-05, 'epoch': 8.32}
+{'loss': 12.0251, 'learning_rate': 1.9781521252274758e-05, 'epoch': 8.54}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-8000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-8000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-8000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-8000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-8000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-7000] due to args.save_total_limit
+{'eval_loss': 356.7412109375, 'eval_f1': 0.6171880718482561, 'eval_runtime': 37.2345, 'eval_samples_per_second': 134.284, 'eval_steps_per_second': 8.406, 'epoch': 8.54}
+{'loss': 11.9526, 'learning_rate': 1.9276872106527107e-05, 'epoch': 8.75}
+{'loss': 12.0756, 'learning_rate': 1.8766896306174174e-05, 'epoch': 8.96}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 9.8537, 'learning_rate': 1.8252229003466906e-05, 'epoch': 9.18}
+{'loss': 9.1383, 'learning_rate': 1.7733511193714465e-05, 'epoch': 9.39}
+{'loss': 9.9015, 'learning_rate': 1.721138891695298e-05, 'epoch': 9.6}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-9000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-9000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-9000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-9000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-9000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-8000] due to args.save_total_limit
+{'eval_loss': 360.28875732421875, 'eval_f1': 0.6208658930400818, 'eval_runtime': 37.224, 'eval_samples_per_second': 134.322, 'eval_steps_per_second': 8.409, 'epoch': 9.6}
+{'loss': 10.44, 'learning_rate': 1.6686512453331278e-05, 'epoch': 9.82}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 9.3953, 'learning_rate': 1.615953551321586e-05, 'epoch': 10.03}
+{'loss': 7.7786, 'learning_rate': 1.5631114423023553e-05, 'epoch': 10.25}
+{'loss': 7.7701, 'learning_rate': 1.51019073077961e-05, 'epoch': 10.46}
+{'loss': 8.1876, 'learning_rate': 1.4572573271534564e-05, 'epoch': 10.67}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-10000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-10000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-10000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-10000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-10000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-9000] due to args.save_total_limit
+{'eval_loss': 389.0712890625, 'eval_f1': 0.6167719196823575, 'eval_runtime': 36.9548, 'eval_samples_per_second': 135.3, 'eval_steps_per_second': 8.47, 'epoch': 10.67}
+{'loss': 8.0632, 'learning_rate': 1.4043771576314543e-05, 'epoch': 10.89}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 7.093, 'learning_rate': 1.3516160821204461e-05, 'epoch': 11.1}
+{'loss': 6.4862, 'learning_rate': 1.2990398122009627e-05, 'epoch': 11.31}
+{'loss': 6.8142, 'learning_rate': 1.2467138292863648e-05, 'epoch': 11.53}
+{'loss': 6.4693, 'learning_rate': 1.194703303068643e-05, 'epoch': 11.74}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-11000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-11000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-11000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-11000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-11000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-10000] due to args.save_total_limit
+{'eval_loss': 434.00408935546875, 'eval_f1': 0.6185829336676695, 'eval_runtime': 36.7985, 'eval_samples_per_second': 135.875, 'eval_steps_per_second': 8.506, 'epoch': 11.74}
+{'loss': 6.9328, 'learning_rate': 1.1430730103524588e-05, 'epoch': 11.95}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 5.2117, 'learning_rate': 1.0918872543785011e-05, 'epoch': 12.17}
+{'loss': 5.2555, 'learning_rate': 1.0412097847366568e-05, 'epoch': 12.38}
+{'loss': 5.0948, 'learning_rate': 9.91103717968718e-06, 'epoch': 12.59}
+{'loss': 5.4512, 'learning_rate': 9.416314589595287e-06, 'epoch': 12.81}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-12000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-12000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-12000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-12000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-12000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-11000] due to args.save_total_limit
+{'eval_loss': 433.1142578125, 'eval_f1': 0.6251581736307208, 'eval_runtime': 36.9495, 'eval_samples_per_second': 135.32, 'eval_steps_per_second': 8.471, 'epoch': 12.81}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 5.2939, 'learning_rate': 8.928546232144682e-06, 'epoch': 13.02}
+{'loss': 4.0749, 'learning_rate': 8.448339601200703e-06, 'epoch': 13.23}
+{'loss': 4.1886, 'learning_rate': 7.976292772833542e-06, 'epoch': 13.45}
+{'loss': 4.2035, 'learning_rate': 7.5129936604410325e-06, 'epoch': 13.66}
+{'loss': 4.5187, 'learning_rate': 7.05901928252857e-06, 'epoch': 13.87}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-13000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-13000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-13000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-13000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-13000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-12000] due to args.save_total_limit
+{'eval_loss': 457.6123962402344, 'eval_f1': 0.6225632518175279, 'eval_runtime': 37.1194, 'eval_samples_per_second': 134.701, 'eval_steps_per_second': 8.432, 'epoch': 13.87}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 3.9375, 'learning_rate': 6.6149350440581205e-06, 'epoch': 14.09}
+{'loss': 3.3182, 'learning_rate': 6.181294032261449e-06, 'epoch': 14.3}
+{'loss': 3.4242, 'learning_rate': 5.758636327794474e-06, 'epoch': 14.51}
+{'loss': 3.8198, 'learning_rate': 5.347488332090737e-06, 'epoch': 14.73}
+{'loss': 3.7775, 'learning_rate': 4.948362111751759e-06, 'epoch': 14.94}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-14000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-14000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-14000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-14000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-14000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-13000] due to args.save_total_limit
+{'eval_loss': 477.347412109375, 'eval_f1': 0.6234728863717217, 'eval_runtime': 37.0318, 'eval_samples_per_second': 135.019, 'eval_steps_per_second': 8.452, 'epoch': 14.94}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+{'loss': 3.4209, 'learning_rate': 4.561754760790814e-06, 'epoch': 15.15}
+{'loss': 2.932, 'learning_rate': 4.188147781524345e-06, 'epoch': 15.37}
+{'loss': 3.1016, 'learning_rate': 3.82800648488219e-06, 'epoch': 15.58}
+{'loss': 2.7586, 'learning_rate': 3.4817794108834383e-06, 'epoch': 15.79}
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 2.9847, 'learning_rate': 3.149897769999731e-06, 'epoch': 16.01}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-15000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-15000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-15000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-15000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-15000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-4000] due to args.save_total_limit
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-14000] due to args.save_total_limit
+{'eval_loss': 499.20001220703125, 'eval_f1': 0.6272417043122266, 'eval_runtime': 37.2373, 'eval_samples_per_second': 134.274, 'eval_steps_per_second': 8.406, 'epoch': 16.01}
+{'loss': 2.8389, 'learning_rate': 2.832774906101727e-06, 'epoch': 16.22}
+{'loss': 2.4774, 'learning_rate': 2.5308057816576373e-06, 'epoch': 16.44}
+{'loss': 2.9619, 'learning_rate': 2.24436648582499e-06, 'epoch': 16.65}
+{'loss': 2.4351, 'learning_rate': 1.9738137660482375e-06, 'epoch': 16.86}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 2.3701, 'learning_rate': 1.7194845837456474e-06, 'epoch': 17.08}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-16000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-16000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-16000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-16000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-16000/special_tokens_map.json
+{'eval_loss': 518.396240234375, 'eval_f1': 0.626756655623201, 'eval_runtime': 36.9611, 'eval_samples_per_second': 135.277, 'eval_steps_per_second': 8.468, 'epoch': 17.08}
+{'loss': 2.2622, 'learning_rate': 1.4816956946387988e-06, 'epoch': 17.29}
+{'loss': 2.642, 'learning_rate': 1.2607432542473563e-06, 'epoch': 17.5}
+{'loss': 2.3731, 'learning_rate': 1.0569024490405016e-06, 'epoch': 17.72}
+{'loss': 2.4122, 'learning_rate': 8.704271537044001e-07, 'epoch': 17.93}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 2.3676, 'learning_rate': 7.015496149525225e-07, 'epoch': 18.14}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-17000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-17000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-17000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-17000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-17000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-16000] due to args.save_total_limit
+{'eval_loss': 521.9251098632812, 'eval_f1': 0.6241513194083415, 'eval_runtime': 37.3167, 'eval_samples_per_second': 133.988, 'eval_steps_per_second': 8.388, 'epoch': 18.14}
+{'loss': 2.366, 'learning_rate': 5.504801622726635e-07, 'epoch': 18.36}
+{'loss': 2.1552, 'learning_rate': 4.1740694597088183e-07, 'epoch': 18.57}
+{'loss': 2.1868, 'learning_rate': 3.024957028386516e-07, 'epoch': 18.78}
+{'loss': 2.0951, 'learning_rate': 2.0588954973501163e-07, 'epoch': 19.0}
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/torch/utils/data/dataloader.py:481: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  cpuset_checked))
+***** Running Evaluation *****
+  Num examples = 5000
+  Batch size = 16
+{'loss': 2.2006, 'learning_rate': 1.27708805340892e-07, 'epoch': 19.21}
+Saving model checkpoint to ../ckpts/bert_crf_nested_2022/checkpoint-18000
+/dssg/home/acct-stu/stu909/.conda/envs/medical_mch/lib/python3.7/site-packages/transformers/configuration_utils.py:337: UserWarning: Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 Transformers. Using `model.gradient_checkpointing_enable()` instead, or if you are using the `Trainer` API, pass `gradient_checkpointing=True` in your `TrainingArguments`.
+  "Passing `gradient_checkpointing` to a config initialization is deprecated and will be removed in v5 "
+Configuration saved in ../ckpts/bert_crf_nested_2022/checkpoint-18000/config.json
+Model weights saved in ../ckpts/bert_crf_nested_2022/checkpoint-18000/pytorch_model.bin
+tokenizer config file saved in ../ckpts/bert_crf_nested_2022/checkpoint-18000/tokenizer_config.json
+Special tokens file saved in ../ckpts/bert_crf_nested_2022/checkpoint-18000/special_tokens_map.json
+Deleting older checkpoint [../ckpts/bert_crf_nested_2022/checkpoint-17000] due to args.save_total_limit
+
+
+Training completed. Do not forget to share your model on huggingface.co/models =)
+
+
+Loading best model from ../ckpts/bert_crf_nested_2022/checkpoint-15000 (score: 0.6272417043122266).
+***** Running Prediction *****
+  Num examples = 3000
+  Batch size = 16
+{'eval_loss': 520.41259765625, 'eval_f1': 0.6247587903936704, 'eval_runtime': 37.041, 'eval_samples_per_second': 134.986, 'eval_steps_per_second': 8.45, 'epoch': 19.21}
+{'loss': 2.4765, 'learning_rate': 6.805084030750142e-08, 'epoch': 19.42}
+{'loss': 1.9277, 'learning_rate': 2.6989955985518567e-08, 'epoch': 19.64}
+{'loss': 2.2333, 'learning_rate': 4.577291886044277e-09, 'epoch': 19.85}
+{'train_runtime': 10754.2644, 'train_samples_per_second': 27.896, 'train_steps_per_second': 1.743, 'train_loss': 21.205219336380445, 'epoch': 20.0}

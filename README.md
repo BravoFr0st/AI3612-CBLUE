@@ -19,6 +19,14 @@ and directly put `data` under the root of this project.
 
 For storage reasons, please download from https://huggingface.co/bert-base-chinese/tree/main, and directly put `bert-base-chinese` under the root of this project.
 
+## Usage
+
+Environment configuration ：`requirements.txt`
+
+Train&test：`./src/run_cmeee.sbatch`
+
+Submit：https://tianchi.aliyun.com/dataset/dataDetail?dataId=95414
+
 ## Contributor
 
 Ziyuan Li: Finish `metrics.py`; Add Layer Learning rate decay in `run_cmeee.py` and `utils.py`.
